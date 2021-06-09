@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <form  class="form" @submit.prevent="CreatePost">
+    <form  class="form" @submit.prevent="CreatePost">
       <div>
         <label for="userId">Post User Id</label>
         <input type="text" id="userId" v-model="formData.userId" />
@@ -17,7 +17,7 @@
       </div>
       <button>Create Post</button>
     </form>
-    -->
+   
   </div> 
 </template>
 
