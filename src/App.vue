@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <create-post></create-post>
+    <!-- <create-post></create-post>
     <post-list></post-list>
-    <list-blog></list-blog>
+    <list-blog></list-blog> -->
+    <router-view></router-view>
   </div>
 </template>
 
