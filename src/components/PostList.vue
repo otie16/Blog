@@ -1,18 +1,18 @@
 <template>
   <div id="show-blogs">
-    <h1 class="heading">Blog posts</h1>
+    <h1 class="heading">Menu</h1>
     <input
       class="input"
       type="text"
       v-model="search"
       placeholder="Search blogs"
     />
-    <div v-for="post in filterPosts" :key="post.id">
-      <div id="single-blogs">
-        <h3>{{ post.id }}. {{ post.title | to-uppercase }}</h3>
-        <p>{{ post.body | snippet }}</p>
-      </div>
-    </div>
+    <ul>
+    <li v-for="(post, i) in posts" :key="i" >
+        <h3>{{ post.name | to-uppercase }}</h3>
+        <h5>{{ post.description | snippet }}</h5>
+    </li>
+    </ul>
     <!-- <button @click="getPosts">Load Posts</button> -->
     <h1 v-if="errorMsg">{{ errorMsg }}</h1>
   </div>
@@ -20,8 +20,9 @@
 
 <script>
 import searchMixin from "../mixins/searchMixin";
+// import {HTTP} from '../axios'
 
-import axios from "axios";
+// import axios from "axios";
 export default {
   name: "PostList",
   created() {
@@ -36,10 +37,11 @@ export default {
   },
   methods: {
     getPosts() {
-      axios
-        .get("https://jsonplaceholder.typicode.com/posts")
+      // return console.log(HTTP)
+      this.$http
+        .get("user/item")
         .then((res) => {
-          // console.log(response.data);
+          console.log(res.data);
           this.posts = res.data;
         })
         .catch((err) => {
@@ -51,24 +53,42 @@ export default {
   //finding the searched term
   computed: {},
   mixins: [searchMixin],
+  mounted() {
+    this.getPosts()
+  }
 };
 </script>
 
 <style scoped>
-#show-blogs {
+/* #show-blogs {
   max-width: 800px;
   margin: 0 auto;
-}
-
+} */
+/* 
 .input {
   width: 80%;
   padding: 15px;
+} */
+/* 
+.list{
+   grid-template-columns: 1fr 1fr 1fr;
+} */
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
 }
 
-#single-blogs {
-  padding: 20px;
-  margin: 20px 0;
-  box-sizing: border-box;
-  background: #eee;
+li {
+  flex-grow: 1;
+  flex-basis: 300px;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 2px 2px 5px rgb(152, 154, 243);
+  /* border: 1px solid #222; */
+  margin: 10px;
 }
+
 </style>
