@@ -6,17 +6,17 @@
 </template>
 
 <script>
-// import Register from "./pages/Register.vue"
+import Register from "./components/Register.vue"
 import PostList from "./components/PostList.vue";
-import CreatePost from "./components/CreatePost.vue";
+// import CreatePost from "./components/CreatePost.vue";
 import ListBlog from "./components/ListBlog.vue";
 
 export default {
   components: {
     ListBlog,
      PostList,
-    CreatePost,
-    //  Register,
+    // CreatePost,
+     Register,
   },
 };
 </script>

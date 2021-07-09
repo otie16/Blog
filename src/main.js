@@ -4,11 +4,16 @@ import Vue from "vue";
 import App from "./App";
 import router from "./router";
 // import * as bootstrap from "bootstrap/dist/js/bootstrap.js"
-// import { HTTP } from './axios';//for microservices
+
+// import { DatePicker } from 'ant-design-vue';
+import {HTTP} from './axios';//for microservices
+import {myMixin} from './mixins'
 
 Vue.config.productionTip = false;
 
-// Vue.prototype.$http = HTTP // for microservices
+// Vue.use(DatePicker);
+Vue.prototype.$http = HTTP // for microservices
+Vue.mixin(theMixin)
 
 
 Vue.filter("to-uppercase", value => {
