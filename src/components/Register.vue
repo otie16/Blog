@@ -35,14 +35,14 @@
             name="password"
             placeholder="password"
           />
-          <div v-if="passwordError" class="error">{{ passwordError }}</div>
+          <!-- <div v-if="passwordError" class="error">{{ passwordError }}</div> -->
           <br />
           <label for="role"></label>
           <select v-model="formData.role">
             <option value="vendor">Vendor</option>
             <option value="customer">Customer</option>
           </select>
-          <div v-if="roleError" class="error">{{ roleError }}</div>
+          <!-- <div v-if="roleError" class="error">{{ roleError }}</div> -->
 
           <br />
           <button>
@@ -91,27 +91,28 @@ export default {
         email: "",
         password: "",
       },
-      roleError: "",
-      emailError: "",
-      passwordError: "",
+      // roleError: "",
+      // emailError: "",
+      // passwordError: "",
     };
   },
   methods: {
     handleSubmit() {
+
       //validate password
       // this.passwordError =
       //   this.password.length > 5
       //     ? ""
       //     : "*Password must be at least 6 chars long";
       console.log(this.formData);
-      // this.$http
-      //   .post("auth/register", this.FormData)
-      //   .then((res) => {
-      //     console.log("success");
-      //   })
-      //   .catch((err) => {
-      //     console.log("error");
-      //   });
+      this.$http
+        .post("auth/register", this.formData)
+        .then((res) => {
+          console.log("success");
+        })
+        .catch((err) => {
+          console.log("error");
+        });
     },
   },
 };
