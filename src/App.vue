@@ -1,27 +1,28 @@
 <template>
   <div id="app">
-    <!-- <create-post></create-post>
-    <post-list></post-list>
-    <list-blog></list-blog> -->
+<!-- <Register /> -->
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+// import Register from "./pages/Register.vue"
 import PostList from "./components/PostList.vue";
 import CreatePost from "./components/CreatePost.vue";
 import ListBlog from "./components/ListBlog.vue";
 
 export default {
   components: {
-    "list-blog": ListBlog,
-    "post-list": PostList,
-    "create-post": CreatePost,
+    ListBlog,
+     PostList,
+    CreatePost,
+    //  Register,
   },
 };
 </script>
 
 <style scoped>
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
