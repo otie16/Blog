@@ -3,11 +3,13 @@
 import Vue from "vue";
 import App from "./App";
 import router from "./router";
-import {HTTP} from './axios';//for microservices
+// import * as bootstrap from "bootstrap/dist/js/bootstrap.js"
+// import { HTTP } from './axios';//for microservices
 
 Vue.config.productionTip = false;
 
-Vue.prototype.$http = HTTP // for microservices
+// Vue.prototype.$http = HTTP // for microservices
+
 
 Vue.filter("to-uppercase", value => {
   return value.toUpperCase();
@@ -19,6 +21,7 @@ Vue.filter("snippet", value => {
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
+// bootstrap,
   router,
   components: { App },
   template: "<App/>"
