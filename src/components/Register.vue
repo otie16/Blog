@@ -1,9 +1,11 @@
 <template>
   <div>
+<AppHeader />
     <section class="home">
       <div class="image-container">
         <!-- <img src="../assets/unsplash.jpg" alt="" /> -->
       </div>
+
       <div class="login-text">
         <h3>Create An Account</h3>
 
@@ -82,7 +84,12 @@
 </template>
 
 <script>
+
+import AppHeader from "../components/AppHeader.vue"
 export default {
+components: {
+AppHeader
+},
   data() {
     return {
       formData: {
@@ -174,7 +181,7 @@ export default {
 }
 .home .image-container img {
   height: 90%;
-  right: 0;
+  /* right: 0; */
   width: 45%;
   position: absolute;
   /* z-index: -1; */
@@ -295,5 +302,10 @@ button a {
   margin-top: 10px;
   font-size: 0.6em;
   font-weight: bold;
+}
+
+h3{
+color: #2c3e50;
+font-family: "Avenir", Helvetica, Arial, sans-serif
 }
 </style>
