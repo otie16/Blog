@@ -2,7 +2,7 @@
   "name": "newblog",
   "version": "1.0.0",
   "description": "learning",
-  "author": "oty", 
+  "author": "oty",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
+    "ant-design-vue": "^1.7.6",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "vue": "^2.5.2",

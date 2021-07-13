@@ -5,10 +5,8 @@ import App from "./App";
 import router from "./router";
 import plugin from "./plugin";
 // import * as bootstrap from "bootstrap/dist/js/bootstrap.js"
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default.css'
-
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
 
 // import { DatePicker } from 'ant-design-vue';
 import {HTTP} from './axios';//for microservices
@@ -16,7 +14,7 @@ import {HTTP} from './axios';//for microservices
 
 Vue.config.productionTip = false;
 Vue.use(plugin);
-Vue.use(VueMaterial)
+Vue.use(Antd);
 
 Vue.prototype.$http = HTTP // for microservices
 // Vue.mixin(theMixin)
