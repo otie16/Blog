@@ -2,12 +2,12 @@
   "name": "newblog",
   "version": "1.0.0",
   "description": "learning",
-  "author": "oty",
+  "author": "oty", 
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js && cp redirects build/_redirects"
+    "build": "node build/build.js"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
